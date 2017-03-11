@@ -11,45 +11,37 @@ public class KalkulatorController {
     public void setRightOperand(String s){
         rightOp = Double.parseDouble(s);
     }
+    public void setOperation(int operation){
+        this.operation = operation;
+    }
     public double getResult(){
         switch (operation){
             case Operation.PLUS:
-                ans = leftOp + rightOp;
-                break;
+                return leftOp + rightOp;
             case Operation.MINUS:
-                ans = leftOp - rightOp;
-                break;
+                return leftOp - rightOp;
             case Operation.MULT:
-                ans = leftOp * rightOp;
-                break;
+                return leftOp * rightOp;
             case Operation.DIV:
-                ans = leftOp / rightOp;
-                break;
+                return leftOp / rightOp;
             case Operation.SQRT:
-                ans = Math.sqrt(op);
-                break;
+                return Math.sqrt(op);
             case Operation.SQ:
-                ans = op * op;
-                break;
+                return op * op;
             case Operation.POW:
-                ans = Math.pow(leftOp, rightOp);
-                break;
+                return Math.pow(leftOp, rightOp);
             case Operation.LOG:
-                ans = Math.log10(op);
-                break;
+                return Math.log10(op);
             case Operation.SIN:
-                ans = Math.sin(op);
-                break;
+                return Math.sin(op);
             case Operation.COS:
-                ans = Math.cos(op);
-                break;
+                return Math.cos(op);
             case Operation.TAN:
-                ans = Math.tan(op);
-                break;
+                return Math.tan(op);
             case Operation.LN:
-                ans = Math.log(op);
-                break;
+                return Math.log(op);
+            default:
+                throw new IllegalArgumentException();
         }
-        return ans;
     }
 }
