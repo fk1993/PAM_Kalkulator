@@ -1,47 +1,30 @@
 package pam.kalkulator;
 
+import static pam.kalkulator.Operation.*;
+
 public class KalkulatorController {
 
-    private double leftOp, rightOp, op, ans;
-    private int operation;
+    private double leftOp, rightOp, op;
+    private Operation operation;
 
-    public void setLeftOperand(String s){
-        leftOp = Double.parseDouble(s);
+    public void setLeftOperand(double num){
+        leftOp = num;
     }
-    public void setRightOperand(String s){
-        rightOp = Double.parseDouble(s);
+    public void setRightOperand(double num){
+        rightOp = num;
     }
-    public void setOperation(int operation){
+    public void setOperand(double num){
+        op = num;
+    }
+
+    public void setOperation(Operation operation){
         this.operation = operation;
     }
+
     public double getResult(){
-        switch (operation){
-            case Operation.PLUS:
-                return leftOp + rightOp;
-            case Operation.MINUS:
-                return leftOp - rightOp;
-            case Operation.MULT:
-                return leftOp * rightOp;
-            case Operation.DIV:
-                return leftOp / rightOp;
-            case Operation.SQRT:
-                return Math.sqrt(op);
-            case Operation.SQ:
-                return op * op;
-            case Operation.POW:
-                return Math.pow(leftOp, rightOp);
-            case Operation.LOG:
-                return Math.log10(op);
-            case Operation.SIN:
-                return Math.sin(op);
-            case Operation.COS:
-                return Math.cos(op);
-            case Operation.TAN:
-                return Math.tan(op);
-            case Operation.LN:
-                return Math.log(op);
-            default:
-                throw new IllegalArgumentException();
-        }
+        if (operation == PLUS || operation == MINUS || operation == MULT || operation == DIV || operation == POW)
+            return operation.apply(leftOp, rightOp);
+        else
+            return operation.apply(op);
     }
 }
