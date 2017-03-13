@@ -11,8 +11,8 @@ public class SimpleActivity extends AppCompatActivity {
             plusButton, minusButton, multButton, divButton, eqButton;
     private Button[] digits;
     private TextView display;
-    private final KalkulatorController controller = new KalkulatorController();
-    private boolean clr = false, pt = false;
+    private final CalculatorController controller = new CalculatorController();
+    private boolean clr = true, pt = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,8 +137,6 @@ public class SimpleActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 clearDisplay();
-                if (display.getText().equals("0"))
-                    display.setText("");
                 display.append(Integer.toString(digit));
             }
         });
@@ -146,7 +144,7 @@ public class SimpleActivity extends AppCompatActivity {
 
     private void clearDisplay(){
         if (clr == true) {
-            display.getEditableText().clear();
+            display.setText("");
             clr = false;
         }
     }

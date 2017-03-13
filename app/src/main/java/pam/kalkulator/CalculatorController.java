@@ -2,7 +2,7 @@ package pam.kalkulator;
 
 import static pam.kalkulator.Operation.*;
 
-public class KalkulatorController {
+public class CalculatorController {
 
     private double leftOp, rightOp, op;
     private Operation operation;
