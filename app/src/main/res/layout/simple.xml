@@ -32,7 +32,7 @@
             android:layout_weight="0.13"
             android:text="0"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            tools:textAlignment="textEnd" />
+            tools:textAlignment="viewEnd" />
 
         <LinearLayout
             android:layout_width="match_parent"

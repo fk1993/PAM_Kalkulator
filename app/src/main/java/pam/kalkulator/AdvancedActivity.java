@@ -4,14 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.*;
 
-public class SimpleActivity extends AppCompatActivity {
+public class AdvancedActivity extends AppCompatActivity {
 
-    private final SimpleActivityController controller = new SimpleActivityController();
+    private final AdvancedActivityController controller = new AdvancedActivityController();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.simple);
+        setContentView(R.layout.advanced);
         findView();
         controller.setActivity(this);
         controller.setOnClickListeners();
@@ -29,6 +29,14 @@ public class SimpleActivity extends AppCompatActivity {
         controller.multButton = (Button) findViewById(R.id.mult_button);
         controller.divButton = (Button) findViewById(R.id.div_button);
         controller.eqButton = (Button) findViewById(R.id.eq_button);
+        controller.sqrtButton = (Button) findViewById(R.id.sqrt_button);
+        controller.sqButton = (Button) findViewById(R.id.sq_button);
+        controller.powButton = (Button) findViewById(R.id.pow_button);
+        controller.logButton = (Button) findViewById(R.id.log_button);
+        controller.sinButton = (Button) findViewById(R.id.sin_button);
+        controller.cosButton = (Button) findViewById(R.id.cos_button);
+        controller.tanButton = (Button) findViewById(R.id.tan_button);
+        controller.lnButton = (Button) findViewById(R.id.ln_button);
         findDigits();
     }
 
