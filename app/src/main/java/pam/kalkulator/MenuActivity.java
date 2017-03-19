@@ -31,7 +31,7 @@ public class MenuActivity extends AppCompatActivity {
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                moveTaskToBack(true);
             }
         });
     }
