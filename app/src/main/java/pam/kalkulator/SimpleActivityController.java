@@ -3,6 +3,7 @@ package pam.kalkulator;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.*;
+import android.content.Intent;
 import static java.lang.Double.*;
 
 public class SimpleActivityController {
@@ -38,6 +39,7 @@ public class SimpleActivityController {
             }
         });
     }
+
     private void setPtButton(){
         ptButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +78,8 @@ public class SimpleActivityController {
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(activity, MenuActivity.class);
+                activity.startActivity(intent);
             }
         });
     }
