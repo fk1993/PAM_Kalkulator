@@ -25,7 +25,7 @@ public class MenuActivity extends AppCompatActivity {
         setButton(advancedButton, AdvancedActivity.class);
 
         aboutButton = (Button) findViewById(R.id.about_button);
-        //setButton(aboutButton, );
+        setButton(aboutButton, AboutActivity.class);
 
         exitButton = (Button) findViewById(R.id.exit_button);
         exitButton.setOnClickListener(new View.OnClickListener() {
