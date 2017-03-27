@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,22 +17,23 @@
             android:id="@+id/menu_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="0.13"
             android:text="Menu" />
 
         <TextView
             android:id="@+id/disp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.1"
+            android:layout_weight="0.13"
+            android:gravity="right"
             android:text="0"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:gravity="right" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.78"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_weight="1">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -41,23 +43,23 @@
 
                 <Button
                     android:id="@+id/bksp_button"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.1"
+                    android:layout_weight="1"
                     android:text="bksp" />
 
                 <Button
                     android:id="@+id/clear_button"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.1"
+                    android:layout_weight="1"
                     android:text="C" />
 
                 <Button
                     android:id="@+id/sign_button"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.015"
+                    android:layout_weight="1"
                     android:text="+/-" />
 
             </LinearLayout>
@@ -65,7 +67,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.20"
+                android:layout_weight="0.15"
                 android:orientation="horizontal">
 
                 <Button
@@ -95,13 +97,30 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="/" />
+
+                <Button
+                    android:id="@+id/log_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="log"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+
+                <Button
+                    android:id="@+id/ln_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="ln"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.20"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_weight="0.15">
 
                 <Button
                     android:id="@+id/button4"
@@ -130,13 +149,30 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="*" />
+
+                <Button
+                    android:id="@+id/pow_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="x^y"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+
+                <Button
+                    android:id="@+id/tan_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="tan"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.20"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_weight="0.15">
 
                 <Button
                     android:id="@+id/button1"
@@ -165,13 +201,30 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="-" />
+
+                <Button
+                    android:id="@+id/sq_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="x^2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+
+                <Button
+                    android:id="@+id/cos_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="cos"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.20"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_weight="0.15">
 
                 <Button
                     android:id="@+id/button0"
@@ -200,6 +253,23 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="+" />
+
+                <Button
+                    android:id="@+id/sqrt_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="sqrt"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+
+                <Button
+                    android:id="@+id/sin_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="sin"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+
             </LinearLayout>
 
         </LinearLayout>
