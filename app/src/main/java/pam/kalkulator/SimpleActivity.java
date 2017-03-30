@@ -7,6 +7,9 @@ import android.widget.*;
 public class SimpleActivity extends AppCompatActivity {
 
     private final SimpleActivityController controller = new SimpleActivityController();
+    private final static String DISP = "pam.kalkulator.disp";
+    private final static String OPERATION = "pam.kalkulator.operation";
+    private final static String LEFT_OP = "pam.kalkulator.leftOp";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +18,20 @@ public class SimpleActivity extends AppCompatActivity {
         findView();
         controller.setActivity(this);
         controller.setOnClickListeners();
+        if (savedInstanceState != null) {
+            CharSequence number = savedInstanceState.getCharSequence(DISP);
+            controller.display.setText(number);
+            controller.setOperation(savedInstanceState.getInt(OPERATION));
+            controller.setLeftOp(savedInstanceState.getDouble(LEFT_OP));
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle state){
+        super.onSaveInstanceState(state);
+        state.putCharSequence(DISP, controller.display.getText());
+        state.putInt(OPERATION, controller.getOperationIndex());
+        state.putDouble(LEFT_OP, controller.getLeftOp());
     }
 
     private void findView(){

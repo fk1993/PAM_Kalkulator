@@ -43,21 +43,21 @@
                     android:id="@+id/bksp_button"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.1"
+                    android:layout_weight="1"
                     android:text="bksp" />
 
                 <Button
                     android:id="@+id/clear_button"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.1"
+                    android:layout_weight="1"
                     android:text="C" />
 
                 <Button
                     android:id="@+id/sign_button"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.015"
+                    android:layout_weight="0.15"
                     android:text="+/-" />
 
             </LinearLayout>

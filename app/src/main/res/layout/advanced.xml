@@ -74,32 +74,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="sin"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+                    android:text="sin" />
 
                 <Button
                     android:id="@+id/cos_button"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="cos"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+                    android:text="cos" />
 
                 <Button
                     android:id="@+id/tan_button"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="tan"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+                    android:text="tan" />
 
                 <Button
                     android:id="@+id/ln_button"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="ln"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+                    android:text="ln" />
             </LinearLayout>
 
             <LinearLayout
@@ -113,32 +109,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="sqrt"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+                    android:text="sqrt" />
 
                 <Button
                     android:id="@+id/sq_button"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="x^2"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+                    android:text="x^2" />
 
                 <Button
                     android:id="@+id/pow_button"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="x^y"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+                    android:text="x^y" />
 
                 <Button
                     android:id="@+id/log_button"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="log"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+                    android:text="log" />
             </LinearLayout>
 
             <LinearLayout
