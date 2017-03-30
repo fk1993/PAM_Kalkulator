@@ -5,7 +5,6 @@ import android.text.Editable;
 import android.view.View;
 import android.widget.*;
 import android.content.Intent;
-import java.util.*;
 import static java.lang.Double.*;
 
 public class SimpleActivityController {
@@ -20,15 +19,12 @@ public class SimpleActivityController {
     protected int operationIndex;
     protected double leftOp;
 
-    protected static final List<Operation> OPERATIONS = Arrays.asList(Operation.PLUS, Operation.MINUS, Operation.MULT, Operation.DIV,
-            Operation.SQRT, Operation.SQ, Operation.POW, Operation.LOG, Operation.SIN, Operation.COS, Operation.TAN, Operation.LN);
-
     public void setActivity(AppCompatActivity activity){
         this.activity = activity;
     }
 
     protected void setOperation(int index){
-        controller.setOperation(OPERATIONS.get(index));
+        controller.setOperation(Operation.getOperation(index));
     }
     protected int getOperationIndex(){
         return operationIndex;
@@ -147,7 +143,7 @@ public class SimpleActivityController {
                     leftOp = getNumber();
                     controller.setLeftOperand(leftOp);
                     controller.setOperation(operation);
-                    operationIndex = OPERATIONS.indexOf(operation);
+                    operationIndex = Operation.getOperationIndex(operation);
                 } catch(NumberFormatException e){
                     viewErrorMessage();
                 }

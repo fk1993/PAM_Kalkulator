@@ -19,8 +19,7 @@ public class SimpleActivity extends AppCompatActivity {
         controller.setActivity(this);
         controller.setOnClickListeners();
         if (savedInstanceState != null) {
-            CharSequence number = savedInstanceState.getCharSequence(DISP);
-            controller.display.setText(number);
+            controller.display.setText(savedInstanceState.getCharSequence(DISP));
             controller.setOperation(savedInstanceState.getInt(OPERATION));
             controller.setLeftOp(savedInstanceState.getDouble(LEFT_OP));
         }

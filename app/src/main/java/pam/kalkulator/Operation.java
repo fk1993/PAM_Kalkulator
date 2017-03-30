@@ -1,5 +1,7 @@
 package pam.kalkulator;
 
+import java.util.*;
+
 public abstract class Operation {
 
     public static final Operation PLUS = new Operation(){
@@ -74,6 +76,16 @@ public abstract class Operation {
             return Math.log(op);
         }
     };
+
+    private static final List<Operation> OPERATIONS = Arrays.asList(
+            PLUS, MINUS, MULT, DIV, SQRT, SQ, POW, LOG, SIN, COS, TAN, LN);
+
+    public static int getOperationIndex(Operation operation){
+        return OPERATIONS.indexOf(operation);
+    }
+    public static Operation getOperation(int index){
+        return OPERATIONS.get(index);
+    }
 
     public double apply(double leftOp, double rightOp){
         return 0;
