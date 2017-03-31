@@ -32,7 +32,8 @@ public class AdvancedActivityController extends SimpleActivityController {
                 } catch(NumberFormatException e){
                     viewErrorMessage();
                 }
-                reset();
+                clr = true;
+                pt = true;
             }
         });
     }

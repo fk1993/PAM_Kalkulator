@@ -15,7 +15,7 @@ public class SimpleActivityController {
     protected Button[] digits;
     protected TextView display;
     protected final CalculatorController controller = new CalculatorController();
-    private boolean clr = true, pt = false;
+    protected boolean clr = true, pt = false;
     protected int operationIndex;
     protected double leftOp;
 
@@ -62,10 +62,10 @@ public class SimpleActivityController {
         ptButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clr = false;
                 if (!pt) {
                     display.append(".");
                     pt = true;
+                    clr = false;
                 }
             }
         });
@@ -91,8 +91,10 @@ public class SimpleActivityController {
                         pt = false;
                     text.delete(length - 1, length);
                 }
-                else
+                else {
                     display.setText("0");
+                    clr = true;
+                }
             }
         });
     }
@@ -130,7 +132,8 @@ public class SimpleActivityController {
                 } catch(NumberFormatException e){
                     viewErrorMessage();
                 }
-                reset();
+                clr = true;
+                pt = true;
             }
         });
     }
@@ -147,7 +150,8 @@ public class SimpleActivityController {
                 } catch(NumberFormatException e){
                     viewErrorMessage();
                 }
-                reset();
+                clr = true;
+                pt = false;
             }
         });
     }
@@ -156,12 +160,8 @@ public class SimpleActivityController {
         if (clr == true) {
             display.setText("");
             clr = false;
+            pt = false;
         }
-    }
-
-    protected void reset() {
-        clr = true;
-        pt = false;
     }
 
     protected double getNumber(){
@@ -172,8 +172,9 @@ public class SimpleActivityController {
         double ans = controller.getResult();
         if (isInfinite(ans) || isNaN(ans))
             viewErrorMessage();
-        else
+        else {
             display.setText(Double.toString(ans));
+        }
     }
 
     protected void viewErrorMessage(){

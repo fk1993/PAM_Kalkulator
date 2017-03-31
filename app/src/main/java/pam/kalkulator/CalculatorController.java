@@ -22,9 +22,13 @@ public class CalculatorController {
     }
 
     public double getResult(){
-        if (operation == PLUS || operation == MINUS || operation == MULT || operation == DIV || operation == POW)
-            return operation.apply(leftOp, rightOp);
-        else
-            return operation.apply(op);
+        try {
+            if (operation == PLUS || operation == MINUS || operation == MULT || operation == DIV || operation == POW)
+                return operation.apply(leftOp, rightOp);
+            else
+                return operation.apply(op);
+        } catch(NullPointerException e){
+            return 0;
+        }
     }
 }
