@@ -37,6 +37,20 @@ public class SimpleActivityController {
         controller.setLeftOperand(num);
     }
 
+    protected boolean getClr() {
+        return clr;
+    }
+    protected void setClr(boolean clr) {
+        this.clr = clr;
+    }
+
+    protected boolean getPt() {
+        return pt;
+    }
+    protected void setPt(boolean pt) {
+        this.pt = pt;
+    }
+
     protected void setOnClickListeners(){
         for(int i = 0; i < digits.length; i++){
             setDigitButton(digits[i], i);
@@ -76,6 +90,7 @@ public class SimpleActivityController {
             @Override
             public void onClick(View v) {
                 display.setText("0");
+                clr = true;
                 pt = false;
             }
         });
@@ -85,15 +100,14 @@ public class SimpleActivityController {
             @Override
             public void onClick(View v) {
                 int length = display.getText().length();
-                Editable text = display.getEditableText();
-                if (length > 1) {
-                    if (text.charAt(length - 1) == '.')
-                        pt = false;
-                    text.delete(length - 1, length);
-                }
-                else {
+                CharSequence text = display.getText();
+                if (length == 1 || (length == 2 && text.charAt(0) == '-') || clr == true){
                     display.setText("0");
                     clr = true;
+                } else {
+                    if (text.charAt(length - 1) == '.')
+                        pt = false;
+                    display.setText(text.subSequence(0, length - 1));
                 }
             }
         });
@@ -116,11 +130,11 @@ public class SimpleActivityController {
         signButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CharSequence number = display.getText();
-                if (number.charAt(0) == '-')
-                    display.getEditableText().delete(0, 1);
+                CharSequence text = display.getText();
+                if (text.charAt(0) == '-')
+                    display.setText(text.subSequence(1, text.length()));
                 else
-                    display.setText("-" + number);
+                    display.setText("-" + text);
             }
         });
         eqButton.setOnClickListener(new View.OnClickListener(){
@@ -151,7 +165,7 @@ public class SimpleActivityController {
                     viewErrorMessage();
                 }
                 clr = true;
-                pt = false;
+                pt = true;
             }
         });
     }
@@ -172,9 +186,8 @@ public class SimpleActivityController {
         double ans = controller.getResult();
         if (isInfinite(ans) || isNaN(ans))
             viewErrorMessage();
-        else {
+        else
             display.setText(Double.toString(ans));
-        }
     }
 
     protected void viewErrorMessage(){

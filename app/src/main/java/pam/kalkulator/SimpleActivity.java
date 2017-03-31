@@ -10,6 +10,8 @@ public class SimpleActivity extends AppCompatActivity {
     private final static String DISP = "pam.kalkulator.disp";
     private final static String OPERATION = "pam.kalkulator.operation";
     private final static String LEFT_OP = "pam.kalkulator.leftOp";
+    private final static String DISP_CLR = "pam.kalkulator.dispClr";
+    private final static String DISP_PT = "pam.kalkulator.dispPt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,8 @@ public class SimpleActivity extends AppCompatActivity {
             controller.display.setText(savedInstanceState.getCharSequence(DISP));
             controller.setOperation(savedInstanceState.getInt(OPERATION));
             controller.setLeftOp(savedInstanceState.getDouble(LEFT_OP));
+            controller.setClr(savedInstanceState.getBoolean(DISP_CLR));
+            controller.setPt(savedInstanceState.getBoolean(DISP_PT));
         }
     }
 
@@ -31,6 +35,8 @@ public class SimpleActivity extends AppCompatActivity {
         state.putCharSequence(DISP, controller.display.getText());
         state.putInt(OPERATION, controller.getOperationIndex());
         state.putDouble(LEFT_OP, controller.getLeftOp());
+        state.putBoolean(DISP_CLR, controller.getClr());
+        state.putBoolean(DISP_PT, controller.getPt());
     }
 
     private void findView(){
