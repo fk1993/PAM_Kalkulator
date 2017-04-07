@@ -7,6 +7,10 @@ public class CalculatorController {
     private double leftOp, rightOp, op;
     private Operation operation;
 
+    public CalculatorController(){
+        operation = new Operation(){};
+    }
+
     public void setLeftOperand(double num){
         leftOp = num;
     }
@@ -22,13 +26,9 @@ public class CalculatorController {
     }
 
     public double getResult(){
-        try {
-            if (operation == PLUS || operation == MINUS || operation == MULT || operation == DIV || operation == POW)
-                return operation.apply(leftOp, rightOp);
-            else
-                return operation.apply(op);
-        } catch(NullPointerException e){
-            return 0;
-        }
+        if (operation == PLUS || operation == MINUS || operation == MULT || operation == DIV || operation == POW)
+            return operation.apply(leftOp, rightOp);
+        else
+            return operation.apply(op);
     }
 }
